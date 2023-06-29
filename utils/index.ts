@@ -38,3 +38,13 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 export const generateCarImageUrl = () => {
 	return 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80'
 }
+
+export const updateSearchParams = (type: string, value: string) => {
+	const searchParams = new URLSearchParams(window.location.search)
+
+	searchParams.set(type, value)
+
+	const newPathname = `${window.location.pathname}?${searchParams.toString()}`
+
+	return newPathname
+}
